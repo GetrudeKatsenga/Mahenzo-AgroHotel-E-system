@@ -59,14 +59,14 @@ ul li{
 
 ul li a{
     text-decoration: none;
-    color: rgb(14, 240, 14);
+    color: white;
     font-family: Arial;
     font-weight: bold;
     transition: 0.4s ease-in-out;
 }
 
 ul li a:hover{
-    color:gold;
+    color: rgb(14, 240, 14);
 
 }
 
@@ -287,12 +287,22 @@ ul li a:hover{
 }
 
 /* About section*/
- *{
+ * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: sans-serif;
  }
+
+
+ .navbar {
+    background: #000;
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+}
+
+
 
 
  .container{
@@ -380,7 +390,7 @@ ul li a:hover{
  }
 
 
-/*service section*/
+/*Product section*/
 * {
     margin: 0;
     padding: 0;
