@@ -66,7 +66,7 @@ ul li a{
 }
 
 ul li a:hover{
-    color: rgb(14, 240, 14);
+    color: gold;
 
 }
 
@@ -287,7 +287,8 @@ ul li a:hover{
 }
 
 /* About section*/
- * {
+ *{
+
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -296,7 +297,7 @@ ul li a:hover{
 
 
  .navbar {
-    background: #000;
+
     width: 1200px;
     height: 75px;
     margin: auto;
@@ -305,7 +306,7 @@ ul li a:hover{
 
 
 
- .container{
+ .container2{
     width: 80%;
     margin: 20px auto;
     padding: 20px;
@@ -411,6 +412,7 @@ ul li a:hover{
  .container {
     max-width: 1200px;
     width: 95%;
+    padding-top: 10%;
  }
 
  .slider-wrapper {
@@ -531,5 +533,112 @@ ul li a:hover{
     .slider-scrollbar .scrollbar-thumb {
         width: 20%;
 
+    }
+}
+/*service Section*/
+body5{
+
+    margin: 0;
+    padding: 0;
+    background-image: url(fish.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    font-family: poppins;
+}
+
+.wrapper{
+    width: 1170px;
+    margin: 5% auto;
+
+}
+
+.wrapper h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    margin: 0;
+}
+
+.single-service{
+    position: relative;
+    width: 31%;
+    height: 320px;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 15px;
+    transition: .5s;
+    overflow: hidden;
+    float: left;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.line{
+    width: 150px;
+    height: 3px;
+    background: #fff;
+    margin: 0 auto 60px auto;
+
+}
+
+.single-service p{
+    color: #262626;
+    font-size: 14px;
+}
+
+.single-service h3{
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #262626;
+}
+
+.social{
+    width: 60px;
+    height: 60px;
+    background: #262626;
+    border-radius: 50%;
+    margin: 5% auto;
+}
+
+.social i{
+    font-size: 30px;
+    padding: 15px;
+    color: #fff;
+
+}
+
+.single-service span{
+    position: absolute;
+    top: 0;
+    left: -110%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    transition: .7s;
+    transform: skewX(10deg);
+
+}
+
+.single-service:hover span{
+    left: 110%;
+
+}
+
+@media (max-width:600px){
+    .wrapper{
+        width: 100%;
+    }
+    .single-service{
+        width: 95%;
+        margin-bottom: 30px;
+
+    }
+    .wrapper h2{
+        font-size: 30px;
     }
 }
