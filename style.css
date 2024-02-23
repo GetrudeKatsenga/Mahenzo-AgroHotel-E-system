@@ -288,7 +288,6 @@ ul li a:hover{
 
 /* About section*/
  *{
-
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -535,7 +534,7 @@ ul li a:hover{
 
     }
 }
-/*service Section*/
+/*service Section
 
 body5{
     margin: 0;
@@ -641,7 +640,7 @@ body5{
     .wrapper h2{
         font-size: 30px;
     }
-}
+}*/
 
 /*contact section*/
 *{
