@@ -405,6 +405,7 @@ ul li a:hover{
 
 
  .body3 {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -416,7 +417,6 @@ ul li a:hover{
  .container {
     max-width: 1200px;
     width: 95%;
-    padding-top: 10%;
  }
 
  .slider-wrapper {
