@@ -6,63 +6,6 @@
   <title>Farm Products</title>
   <style>
 
-.navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
-}
-
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-}
-
-.logo{
-    color:rgb(14, 240, 14);
-    font-size: 35px;
-    font-family: Arial;
-    padding-left: 20px;
-    float: left;
-    padding-top: 10px; 
-} 
-
-
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px;
-}
-
-
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
-}
-
-ul li a{
-    text-decoration: none;
-    color: white;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
-}
-
-ul li a:hover{
-    color: gold;
-
-}
-
-
     body {
       background-image: url(about.jpg);
       font-family: Arial, sans-serif;
@@ -71,14 +14,17 @@ ul li a:hover{
       background-color: #f4f4f4;
     }
 
-    header {
-     /* background-color: #333;*/
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    
+    .container {
+        padding-top: -20%;  
+      max-width: 1200px;
+      width: 95%;
+      margin: 20px auto;
+      overflow: hidden; /* Hide overflow for the slider */
     }
 
     .hero {
+      padding-bottom: -10%;  
       background-size: cover;
       background-position: center;
       height: 300px;
@@ -89,11 +35,11 @@ ul li a:hover{
       text-align: center;
     }
 
-    .container {
-      max-width: 1200px;
-      width: 95%;
-      margin: 20px auto;
-      overflow: hidden; /* Hide overflow for the slider */
+    header {
+     /* background-color: #333;*/
+      color: #fff;
+      padding: 20px;
+      text-align: center;
     }
 
     .slider {
@@ -136,11 +82,13 @@ ul li a:hover{
       animation: slide 30s infinite; /* Change duration and iteration as needed */
     }
   </style>
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js"></script>
 
 </head>
 <body>
 
-  <!--<div class="main">
+  <!-- <div class="main"> -->
     <div class="navbar">
         <div class="icon">
             <h2 class="logo">AgroHotel</h2>
@@ -154,16 +102,23 @@ ul li a:hover{
             <li><a href="product.html">PRODUCT</a></li>
             <li><a href="contact.html">CONTACT</a></li>
         </ul>
-    </div>-->
+    </div>
 
-<div class="hero">
-        <div>
-             <h1>Farm Fresh Products<br>Welcome to Our Website</h1>
-          <p>Discover the freshest produce straight from the farm to your table.</p>
-        </div>
-      </div>
 
   <div class="container">
+
+
+    
+<div class="hero">
+  <div>
+       <h1>Farm Fresh Products<br>Welcome to Our Website</h1>
+    <p>Discover the freshest produce straight from the farm to your table.</p>
+  </div>
+</div>
+
+
+
+
     <div class="slider slide-in">
       <div class="product">
         <img src="vegetables.jpg" alt="vegetables">
