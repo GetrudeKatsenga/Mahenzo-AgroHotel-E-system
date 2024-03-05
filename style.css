@@ -66,10 +66,12 @@ ul li a{
     transition: 0.4s ease-in-out;
 }
 
- nav ul li a.active {
-    background-color: #333;
+a.active,a:hover{
     color: gold;
-} 
+     /* border: 1px solid gold;  */
+    transition:  .5s;
+}
+
 
 ul li a:hover{
     color: gold;
