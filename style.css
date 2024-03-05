@@ -326,9 +326,9 @@ ul li a:hover{
     text-align: center;
     font-size: 50px;
     font-weight: bold;
-    padding-top: 20px;
+    padding-top: 40px;
     margin-top: 60px;
-    margin-bottom: 70px;
+    /* margin-bottom: 70px; */
     color: white;
 
  }
@@ -336,7 +336,7 @@ ul li a:hover{
 
  .line{
    
-    width: 150px;
+    width: 100px;
     height: 3px;
     background: #fff;
     margin: 0 auto 60px auto;
