@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Mahenzo AgroHotel E-system</title>
         <link rel="stylesheet" href="style.css">
-        
+        <script src="script.js"></script>
 
     </head>
     <body>
@@ -19,7 +19,6 @@
             <div class="menu">
                 <ul>
                     <li><a class="active" href="#">HOME</a></li>
-                    <!-- <li><a href="index.html">HOME</a></li> -->
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="service.html">SERVICE</a></li>
                     <li><a href="product.html">PRODUCT</a></li>
@@ -45,12 +44,14 @@
 
                 <div class="form">
                     <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="" placeholder="Enter password Here">
-                    <button class="btnn"><a href="#">Login</a></button>
+                    <input type="text" id="email" name="email" placeholder="Enter Email Here"/>
+                    <input type="password" id="password" name="password" placeholder="Enter password Here"/>
+                     <!-- <input type="submit" id="signUp" name="signup_submit" value="Sign up"/> -->
+
+                    <button class="btnn"><a href="#"<input type="submit" id="login" name="login_submit" value="Login"/>Login</a></button>
 
                     <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
+                    <a href="#"<input type="submit" id="signUp" name="signup_submit" value="Sign up"/>Sign up </a> here</a></p> 
                     <p class="liw">log in with</p>
 
                     <div class="icon">
@@ -68,5 +69,122 @@
         </div>
     </div>            
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
 </body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+  import {getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAKWll2P03NbMD-vwbuMCT4sjoqfnd-oMQ",
+    authDomain: "authentication-app-208ca.firebaseapp.com",
+    databaseURL: "https://authentication-app-208ca-default-rtdb.firebaseio.com",
+    projectId: "authentication-app-208ca",
+    storageBucket: "authentication-app-208ca.appspot.com",
+    messagingSenderId: "650250561859",
+    appId: "1:650250561859:web:071febfb9650c8eae267f6"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+  signUp.addEventListener("click",(e) => {
+
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+     .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+
+    set(ref(database, "users/" + user.uid),{
+        email: email
+    })
+
+
+    alert("user created!");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert("errorMessage");
+    // ..
+  });
+
+
+  });
+
+  login.addEventListener("click",(e)=>{
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+
+
+    const dt = new Date();
+    update(ref(database, "users/" + user.uid),{
+        last_login: dt,
+    })
+
+    alert("user loged in!");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+     alert(errorMessage);
+
+
+  });
+
+  });
+
+  const user = auth.currentUser;
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    //bla bla bl;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+   //bla bla bl;
+  }
+});
+
+logout.addEventListener("click",(e)=>{
+
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      alert("user log out");
+    }).catch((error) => {
+      // An error happened.
+
+      const errorCode = error.code;
+        const errorMessage = error.message;
+
+     alert(errorMessage);
+    });
+
+});
+
+</script>
+
 </html>
