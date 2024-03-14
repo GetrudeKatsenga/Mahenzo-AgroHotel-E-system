@@ -192,7 +192,7 @@
                 </li>
 
                 <li class="logout">
-                    <a href="#">
+                    <a href="#" id="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
                     </a>
@@ -221,4 +221,21 @@
          
        
 </body>
+<script>
+    // JavaScript function to handle logout
+    function logout() {
+        // Perform logout actions here
+        // For example, clearing session data, redirecting to login page, etc.
+        // For demonstration purposes, let's just alert the user
+        alert("You have been logged out.");
+        // Redirecting to login page
+        window.location.href = "index.html"; // Replace "login.html" with your actual login page URL
+    }
+
+    // Add event listener to the logout link
+    document.getElementById("logout").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        logout(); // Call logout function
+    });
+</script>
 </html>
