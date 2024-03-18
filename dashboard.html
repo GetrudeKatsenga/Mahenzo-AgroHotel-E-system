@@ -90,6 +90,8 @@
     cursor: pointer;
     border-radius: 50%;
 }
+
+
 .header--wrapper{
     display: flex;
     justify-content: space-between;
@@ -129,8 +131,85 @@
 .searh--box i:hover{
     transform: scale(1.2);
 }
+#imagePreview {
+            width: 50px;
+            height: 50px;
+            border-radius:50% ;
+            /* margin: 10px auto; */
+        }
+
+        #chooseFileBtn {
+            /* display: inline-block; */
+            background-color: green;
+            color: #fff;
+            width: 10px;
+            height: 10px;
+            padding: 5px 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 2;
+        }
+
+        #photoUpload {
+            display: none;
+        }
 
 
+
+/* cart items details */
+.cart-page{
+    margin: 80px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: green;
+    font-weight: normal;
+}
+td{
+    padding: 10px 5px;
+}
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+
+}
+td a{
+    color: green;
+    font-size: 12px;
+}
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+
+}
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    border-top: 3px solid green;
+    width: 100%;
+    max-width: 400px;
+}
+td:last-child{
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
 
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
@@ -214,13 +293,100 @@
                     <input type="text" placeholder="Search"/> 
 
                 </div>
-                <img src="./FB_IMG_1704629475844.jpg" alt="">
+                
+                   <!-- <img src="" alt=""> -->
+                    <img id="imagePreview" src="" alt="Preview Image">
+                    <br>
+                    <label for="photoUpload" id="chooseFileBtn"></label>
+                    <input type="file" id="photoUpload" accept="image/*" onchange="previewImage(event)" multiple>
+                   
+                   
+                   <!-- <input type="file" id="photoUpload" accept="image/*" onchange="previewImage(event)">
+                   <br>
+                   <img id="imagePreview" src="" alt="Preview Image"> 
+                    -->
+                   
+           
             </div>
+            
          </div>
+         <!-- cart items details -->
+         <div class="small-container cart-page">
 
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="./cheff.jpg" alt="">
+                            <div>
+                                <p>Printed</p>
+                                <small>Price: $50.00</small>
+                                <br>
+                                <a href="">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="" alt="">
+                            <div>
+                                <p>Printed</p>
+                                <small>Price: $50.00</small>
+                                <br>
+                                <a href="">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="" alt="">
+                            <div>
+                                <p>Printed</p>
+                                <small>Price: $50.00</small>
+                                <br>
+                                <a href="">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$50</td>
+                </tr>
+            </table>
+            <div class="total-price">
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>$150.00</td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td>$35.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>$.230</td>
+                    </tr>
+                </table>
+            </div>
+
+         </div>
+        
          
        
-</body>
+
 <script>
     // JavaScript function to handle logout
     function logout() {
@@ -237,5 +403,22 @@
         event.preventDefault(); // Prevent default link behavior
         logout(); // Call logout function
     });
+
+
+    function previewImage(event) {
+            const input = event.target;
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const imgElement = document.getElementById('imagePreview');
+                imgElement.src = reader.result;
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+
+
+    
 </script>
+</body>
 </html>
