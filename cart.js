@@ -44,7 +44,7 @@ const cart = () => {
               <div class="image">
                   <img src="${info.image}" />
               </div>
-              <div class="name">Name</div>
+              <div class="name">${info.name}</div>
               <div class="totalPrice">$
               ${info.price * item.quantity}
               </div>
